@@ -8,3 +8,10 @@ Apigee API
 Compute Engine API
 SERVICENTWORKING API
 Cloud KMS API
+
+Result:
+
+Run this command to check if drz is correct:
+
+curl -X GET https://apigee.googleapis.com/v1/organizations/$PROJECT_ID:getProjectMapping \
+    -H "Authorization: Bearer $(gcloud auth print-access-token)"
