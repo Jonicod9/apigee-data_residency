@@ -16,8 +16,11 @@ terraform {
 }
 
 
-
 provider "google" {
-  project = "ep-latam-finops"
+  project = var.project_id
 }
 
+
+provider "google-beta" {
+  apigee_custom_endpoint = "https://us-apigee.googleapis.com/v1/"
+}
