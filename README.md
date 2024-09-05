@@ -15,3 +15,10 @@ Run this command to check if drz is correct:
 
 curl -X GET https://apigee.googleapis.com/v1/organizations/$PROJECT_ID:getProjectMapping \
     -H "Authorization: Bearer $(gcloud auth print-access-token)"
+
+Delete:
+AUTH="Authorization: Bearer $(gcloud auth print-access-token)"
+
+curl -H "$AUTH" -X DELETE "https://CONTROL_PLANE_LOCATION-apigee.googleapis.com/v1/organizations/$PROJECT_ID?retention=MINIMUM"
+i.e: 
+curl -H "$AUTH" -X DELETE "https://us-apigee.googleapis.com/v1/organizations/$PROJECT_ID?retention=MINIMUM"
