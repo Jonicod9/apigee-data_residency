@@ -45,7 +45,7 @@ resource "google_service_networking_connection" "apigee_vpc_connection" {
   provider                = google-beta
   network                 = google_compute_network.apigee_network.id
   service                 = "servicenetworking.googleapis.com"
-  reserved_peering_ranges = [google_compute_global_address.apigee_range.name]
+  reserved_peering_ranges = [google_compute_global_address.apigee_range.name,google_compute_global_address.apigee_support_range.name]
   depends_on              = [google_project_service.gcp_services]
  
 }
